@@ -1,14 +1,30 @@
-﻿using Xamarin.Forms;
+﻿using System.Diagnostics;
+using Prism;
+using Prism.Ioc;
+using Prism.Unity;
+using Xamarin.Forms;
+using CS481Final.Views;
+using CS481Final.ViewModels;
 
 namespace CS481Final
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        public App()
+        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+
+        protected override void OnInitialized()
         {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnInitialized)}");
             InitializeComponent();
 
-            MainPage = new CS481FinalPage();
+            NavigationService.NavigateAsync(nameof(CS481FinalPage));
+        }
+
+        protected override void RegisterTypes(Prism.Ioc.IContainerRegistry containerRegistry)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterTypes)}");
+
+            containerRegistry.RegisterForNavigation<CS481FinalPage, CS481FinalPageViewModel>();
         }
 
         protected override void OnStart()

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Prism;
+using Prism.Ioc;
 using UIKit;
 
 namespace CS481Final.iOS
@@ -17,6 +19,14 @@ namespace CS481Final.iOS
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+    }
+
+    public class iOSInitializer : IPlatformInitializer
+    {
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+
         }
     }
 }
