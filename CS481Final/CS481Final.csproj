@@ -56,6 +56,7 @@
       <DependentUpon>AddItemPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AddItemPageViewModel.cs" />
+    <Compile Include="Models\IndividualItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

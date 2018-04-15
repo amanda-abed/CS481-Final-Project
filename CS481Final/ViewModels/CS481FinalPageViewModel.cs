@@ -29,18 +29,18 @@ namespace CS481Final.ViewModels
             NavToAddItemPageCommand = new DelegateCommand(OnNavToAddItemPage);
         }
 
-        private void OnNavToAddItemPage()
+        private async void OnNavToAddItemPage()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavToAddItemPage)}");
 
-            nav_service.NavigateAsync("AddItemPage");
+            await nav_service.NavigateAsync("AddItemPage", null, true, true);
         }
 
-        private void OnNavToLogPage()
+        private async void OnNavToLogPage()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavToLogPage)}");
 
-            nav_service.NavigateAsync("LogPage");
+            await nav_service.NavigateAsync("LogPage");
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)

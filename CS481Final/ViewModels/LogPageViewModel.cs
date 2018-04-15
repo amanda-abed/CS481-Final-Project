@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -8,6 +9,8 @@ namespace CS481Final.ViewModels
 {
     public class LogPageViewModel : BindableBase, INavigationAware
     {
+        public DelegateCommand<IndividualItem> ItemSelectedCommand { get; set; }
+
         private string _title;
         public string Title
         {
@@ -15,10 +18,32 @@ namespace CS481Final.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+        private ObservableCollection<IndividualItem> _item;
+        public ObservableCollection<IndividualItem> Item
+        {
+            get { return _item; }
+            set { SetProperty(ref _item, value); }
+        }
+
+        private IndividualItem selected_item;
+        public IndividualItem SelectedItem
+        {
+            get { return selected_item; }
+            set { SetProperty(ref selected_item, value); }
+        }
+
         public LogPageViewModel()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(LogPageViewModel)}:  ctor");
+
             Title = "Logs";
+
+            ItemSelectedCommand = new DelegateCommand<IndividualItem>(OnItemSelected); 
+        }
+
+        private void OnItemSelected(IndividualItem obj)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnItemSelected)}:  {obj}");
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -33,7 +58,7 @@ namespace CS481Final.ViewModels
 
         public void OnNavigatingTo(NavigationParameters parameters)
         {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
+           Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
         }
     }
 }

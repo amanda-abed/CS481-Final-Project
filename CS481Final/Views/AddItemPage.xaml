@@ -9,11 +9,63 @@
 	<ContentPage.Content>
         <StackLayout
             HorizontalOptions="Center"
-            VerticalOptions="Center">
+            VerticalOptions="Center"
+            Padding="20,0">
+      <!-- <Grid
+            Padding="20,0"
+            RowSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinition>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinition>
             <Label
-                Text="No new items"
-                HorizontalTextAlignment="Center"
-                VerticalTextAlignment="Start"/>
+                Grid.Row="0"
+                Grid.Column="0"
+                Text="Total Amount:"/>
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="Number of People:"/>
+             <Entry
+                Grid.Row="0"
+                Grid.Column="1"
+                Placeholder="Enter Total Amount"
+                Text="{Binding TotalAmount}"/>
+            <Entry
+                Grid.Row="1"
+                Grid.Column="1"
+                Placeholder="Enter Number of People"
+                Text="{Binding NumberOfPeople}"/>
+            <Button
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="1"
+                Text="Add"
+                Command="{Binding AddToLog}"/>
+        </Grid>-->
+            <Label
+                Text="Total Amount:"/>
+            <Entry
+                Placeholder="Enter Total Amount"
+                Text="{Binding TotalAmount}"/>
+            <Label
+                Text="Number of People:"/>
+            <Entry
+                Placeholder="Enter Number of People"
+                Text="{Binding NumberOfPeople}"/>
+            <Label
+                Text="Amount Charged:"/>
+            <Button
+                Text="Add"
+                Command="{Binding AddToLog}"/>
+            <Button
+                Text="Cancel"
+                Command="{Binding GoBackToHomeScreen}"/>
         </StackLayout>
 	</ContentPage.Content>
 </ContentPage>
