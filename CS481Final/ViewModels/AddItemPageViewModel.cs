@@ -63,7 +63,8 @@ namespace CS481Final.ViewModels
 
             IndividualItem newItem = new IndividualItem
             {
-                Total = this.TotalAmount
+                //AMOUNT CHARGED GOES HERE
+                //Total = this. 
             };
 
 
@@ -72,8 +73,8 @@ namespace CS481Final.ViewModels
                 return;
             else
             {
+                //PASS AMOUNT CHARGED TO LOGPAGE
                 var navParams = new NavigationParameters();
-                navParams.Add("LogPage", newItem);
 
                 await Task.Delay(1);
 
