@@ -30,6 +30,14 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="Views\CS481FinalPage.xaml" />
+    <EmbeddedResource Include="Views\LogPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddItemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -40,6 +48,14 @@
       <DependentUpon>CS481FinalPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\CS481FinalPageViewModel.cs" />
+    <Compile Include="Views\LogPage.xaml.cs">
+      <DependentUpon>LogPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\LogPageViewModel.cs" />
+    <Compile Include="Views\AddItemPage.xaml.cs">
+      <DependentUpon>AddItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AddItemPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

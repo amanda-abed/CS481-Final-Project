@@ -10,21 +10,27 @@ namespace CS481Final
 {
     public partial class App : PrismApplication
     {
-        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+        public App() : this(null) { }
 
-        protected override void OnInitialized()
+        public App(IPlatformInitializer initializer) : base(initializer) { }
+
+        protected override async void OnInitialized()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnInitialized)}");
             InitializeComponent();
 
-            NavigationService.NavigateAsync(nameof(CS481FinalPage));
+            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(CS481FinalPage)}"); 
+
         }
 
         protected override void RegisterTypes(Prism.Ioc.IContainerRegistry containerRegistry)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterTypes)}");
 
+            containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<CS481FinalPage, CS481FinalPageViewModel>();
+            containerRegistry.RegisterForNavigation<LogPage, LogPageViewModel>();
+            containerRegistry.RegisterForNavigation<AddItemPage, AddItemPageViewModel>();
         }
 
         protected override void OnStart()
