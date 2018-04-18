@@ -127,6 +127,12 @@
     <Reference Include="Prism.Unity.Forms">
       <HintPath>..\packages\Prism.Unity.Forms.7.0.0.396\lib\netstandard2.0\Prism.Unity.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.LocalNotifications.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Notifier.2.1.0\lib\MonoAndroid10\Plugin.LocalNotifications.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.LocalNotifications">
+      <HintPath>..\packages\Xam.Plugins.Notifier.2.1.0\lib\MonoAndroid10\Plugin.LocalNotifications.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CS481Final\CS481Final.csproj">
