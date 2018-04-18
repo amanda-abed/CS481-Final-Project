@@ -41,6 +41,11 @@ namespace CS481Final.ViewModels
             ItemSelectedCommand = new DelegateCommand<IndividualItem>(OnItemSelected); 
         }
 
+      /*  void Handle_DateSelected(object sender, Xamarin.Forms.DateChangedEventArgs e)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(Handle_DateSelected)}");
+        }*/
+
         private void OnItemSelected(IndividualItem obj)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnItemSelected)}:  {obj}");

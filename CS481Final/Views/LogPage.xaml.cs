@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace CS481Final.Views
@@ -10,6 +10,11 @@ namespace CS481Final.Views
         public LogPage()
         {
             InitializeComponent();
+        }
+
+        void Handle_DateSelected(object sender, Xamarin.Forms.DateChangedEventArgs e)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(Handle_DateSelected)}");
         }
     }
 }
