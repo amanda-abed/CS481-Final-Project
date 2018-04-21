@@ -13,16 +13,8 @@ namespace CS481Final.ViewModels
         public DelegateCommand NavToLogPageCommand { get; set; }
         public DelegateCommand NavToAddItemPageCommand { get; set; }
 
-        private string _title;
-        public string Title
-        {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
-        }
-
         public CS481FinalPageViewModel(INavigationService navigationService)
         {
-            Title = "Manage";
             Debug.WriteLine($"**** {this.GetType().Name}: ctor");
             nav_service = navigationService;
             NavToLogPageCommand = new DelegateCommand(OnNavToLogPage);

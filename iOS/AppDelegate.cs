@@ -49,12 +49,11 @@ namespace CS481Final.iOS
             completionHandler(UNNotificationPresentationOptions.Alert);
         }
     }
-
-/*    public class iOSInitializer : IPlatformInitializer
+        public class iOSInitializer : IPlatformInitializer
     {
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
 
         }
-    }*/
+    }
 }

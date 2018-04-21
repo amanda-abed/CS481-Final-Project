@@ -5,7 +5,9 @@ using Prism.Unity;
 using Xamarin.Forms;
 using CS481Final.Views;
 using CS481Final.ViewModels;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CS481Final
 {
     public partial class App : PrismApplication

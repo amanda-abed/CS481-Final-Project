@@ -4,12 +4,31 @@ using System.Diagnostics;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Plugin.LocalNotifications;
 
 namespace CS481Final.ViewModels
 {
     public class LogPageViewModel : BindableBase, INavigationAware
     {
+        public DelegateCommand SetDate { get; set; }
         public DelegateCommand<IndividualItem> ItemSelectedCommand { get; set; }
+
+        private DateTime _dateSelected;
+        public DateTime DateSelectedCommand
+        {
+            get
+            {
+                if (_dateSelected == DateTime.MinValue)
+                {
+                    return DateTime.Now.Date;
+                }
+                else
+                {
+                    return _dateSelected;
+                }
+            }
+            set { SetProperty(ref _dateSelected, value); }
+        }
 
         private string _title;
         public string Title
@@ -38,13 +57,16 @@ namespace CS481Final.ViewModels
 
             Title = "Logs";
 
-            ItemSelectedCommand = new DelegateCommand<IndividualItem>(OnItemSelected); 
+            ItemSelectedCommand = new DelegateCommand<IndividualItem>(OnItemSelected);
+            SetDate = new DelegateCommand(OnSetDate);
         }
 
-      /*  void Handle_DateSelected(object sender, Xamarin.Forms.DateChangedEventArgs e)
+        private void OnSetDate()
         {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(Handle_DateSelected)}");
-        }*/
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnSetDate)}");
+
+            CrossLocalNotifications.Current.Show("Reminder", $"Due date: {DateSelectedCommand.Date}");
+        }
 
         private void OnItemSelected(IndividualItem obj)
         {

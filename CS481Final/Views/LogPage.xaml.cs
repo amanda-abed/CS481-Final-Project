@@ -11,10 +11,5 @@ namespace CS481Final.Views
         {
             InitializeComponent();
         }
-
-        void Handle_DateSelected(object sender, Xamarin.Forms.DateChangedEventArgs e)
-        {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(Handle_DateSelected)}");
-        }
     }
 }
