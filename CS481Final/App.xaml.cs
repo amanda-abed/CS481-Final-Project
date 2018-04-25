@@ -6,6 +6,8 @@ using Xamarin.Forms;
 using CS481Final.Views;
 using CS481Final.ViewModels;
 using Xamarin.Forms.Xaml;
+using CS481Final.Services;
+
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CS481Final
@@ -33,6 +35,8 @@ namespace CS481Final
             containerRegistry.RegisterForNavigation<CS481FinalPage, CS481FinalPageViewModel>();
             containerRegistry.RegisterForNavigation<LogPage, LogPageViewModel>();
             containerRegistry.RegisterForNavigation<AddItemPage, AddItemPageViewModel>();
+
+            containerRegistry.RegisterSingleton<IRepository, Repository>();
         }
 
         protected override void OnStart()

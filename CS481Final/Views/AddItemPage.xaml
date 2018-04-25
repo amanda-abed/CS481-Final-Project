@@ -5,67 +5,115 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true"
 	x:Class="CS481Final.Views.AddItemPage"
-    Title="{Binding Title}">
-	<ContentPage.Content>
-        <StackLayout
+    Title="{Binding Title}"
+    BackgroundImage="homebackground.png"
+    IsBusy="{Binding ShowIsBusySpinner}">
+   <ScrollView
             HorizontalOptions="Center"
             VerticalOptions="Center"
-            Padding="20,0">
-      <!-- <Grid
-            Padding="20,0"
-            RowSpacing="15">
+            Padding="0,20,0,0">
+           <Grid
+                RowSpacing="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>                
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinition>
+            <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinition>
+            </Grid.ColumnDefinitions>
             <Label
                 Grid.Row="0"
                 Grid.Column="0"
-                Text="Total Amount:"/>
+                Text="Total Amount:"
+                FontAttributes="Bold"/>
             <Label
                 Grid.Row="1"
                 Grid.Column="0"
-                Text="Number of People:"/>
+                Text="Number of People:"
+                FontAttributes="Bold"/>
+            <Label
+                Text="Amount Charged:"
+                Grid.Row="4"
+                Grid.Column="0"
+                FontAttributes="Bold"/>
              <Entry
                 Grid.Row="0"
                 Grid.Column="1"
-                Placeholder="Enter Total Amount"
+                Keyboard="Numeric"
+                Placeholder="Total Amount"
                 Text="{Binding TotalAmount}"/>
             <Entry
                 Grid.Row="1"
                 Grid.Column="1"
-                Placeholder="Enter Number of People"
+                Keyboard="Numeric"
+                Placeholder="Number of People"
                 Text="{Binding NumberOfPeople}"/>
+             <Label
+                Grid.Row="4"
+                Grid.Column="1"
+                BackgroundColor="White"
+                TextColor="Black"
+                HeightRequest="20"
+                WidthRequest="10"
+                Text="{Binding AmountCharged}"
+                />
             <Button
-                Grid.Row="2"
+                Text="Calculate"
+                TextColor="White"
+                FontAttributes="Bold"
+                Command="{Binding CalculateTotal}"
+                Grid.Row="3"
                 Grid.Column="0"
-                Grid.ColumnSpan="1"
-                Text="Add"
-                Command="{Binding AddToLog}"/>
-        </Grid>-->
-            <Label
-                Text="Total Amount:"/>
-            <Entry
-                Placeholder="Enter Total Amount"
-                Text="{Binding TotalAmount}"/>
-            <Label
-                Text="Number of People:"/>
-            <Entry
-                Placeholder="Enter Number of People"
-                Text="{Binding NumberOfPeople}"/>
-            <Label
-                Text="Amount Charged:"/>
+                Grid.ColumnSpan="2"/>
+            <BoxView 
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HeightRequest="1"
+                WidthRequest="70"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="EndAndExpand"
+                Color="Black"/>
             <Button
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Text="Add"
+                TextColor="White"
+                FontAttributes="Bold"
                 Command="{Binding AddToLog}"/>
+            <BoxView 
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HeightRequest="1"
+                WidthRequest="40"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="EndAndExpand"
+                Color="Black"/>
             <Button
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Text="Cancel"
+                TextColor="White"
+                FontAttributes="Bold"
                 Command="{Binding GoBackToHomeScreen}"/>
-        </StackLayout>
-	</ContentPage.Content>
+             <BoxView 
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HeightRequest="1"
+                WidthRequest="60"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="EndAndExpand"
+                Color="Black"/>
+        </Grid>
+     </ScrollView> 
 </ContentPage>

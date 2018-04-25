@@ -16,7 +16,9 @@ namespace CS481Final.ViewModels
         public CS481FinalPageViewModel(INavigationService navigationService)
         {
             Debug.WriteLine($"**** {this.GetType().Name}: ctor");
+
             nav_service = navigationService;
+
             NavToLogPageCommand = new DelegateCommand(OnNavToLogPage);
             NavToAddItemPageCommand = new DelegateCommand(OnNavToAddItemPage);
         }
@@ -25,14 +27,14 @@ namespace CS481Final.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavToAddItemPage)}");
 
-            await nav_service.NavigateAsync("AddItemPage", null, true, true);
+            await nav_service.NavigateAsync("AddItemPage", null);
         }
 
         private async void OnNavToLogPage()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavToLogPage)}");
 
-            await nav_service.NavigateAsync("LogPage");
+            await nav_service.NavigateAsync("LogPage", null);
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)

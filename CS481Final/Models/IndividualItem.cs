@@ -1,7 +1,7 @@
 ﻿using System;
 using Prism.Mvvm;
 
-namespace CS481Final.ViewModels
+namespace CS481Final.Models
 {
     public class IndividualItem : BindableBase
     {
@@ -16,5 +16,5 @@ namespace CS481Final.ViewModels
         {
             return $"Total={Total}";
         }
-    }
+	}
 }
