@@ -111,7 +111,7 @@ namespace CS481Final.ViewModels
 
                 await Task.Delay(2);
            
-                await nav_service.NavigateAsync("LogPage", navParams);
+                await nav_service.NavigateAsync("/LogPage", navParams);
             }
             await nav_service.NavigateAsync("CS481FinalPage");
         }

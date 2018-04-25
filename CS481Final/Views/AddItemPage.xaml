@@ -9,8 +9,8 @@
     BackgroundImage="homebackground.png"
     IsBusy="{Binding ShowIsBusySpinner}">
    <ScrollView
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
             Padding="0,20,0,0">
            <Grid
                 RowSpacing="20">
@@ -60,9 +60,8 @@
                 BackgroundColor="White"
                 TextColor="Black"
                 HeightRequest="20"
-                WidthRequest="10"
-                Text="{Binding AmountCharged}"
-                />
+                WidthRequest="9"
+                Text="{Binding AmountCharged}"/>
             <Button
                 Text="Calculate"
                 TextColor="White"

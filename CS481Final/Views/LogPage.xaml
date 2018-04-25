@@ -7,12 +7,16 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     ios:Page.UseSafeArea="true"
 	x:Class="CS481Final.Views.LogPage"
-    Title = "{Binding Title}">
+    Title = "{Binding Title}"
+    IsBusy="{Binding ShowIsBusySpinner}">
         <StackLayout
-            HorizontalOptions="CenterAndExpand"
-            VerticalOptions="CenterAndExpand">
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill">
             <ListView
-                ItemsSource="{Binding Item}">
+                ItemsSource="{Binding Item}"
+                IsRefreshing="{Binding ShowIsBusySpinner}"
+                IsPullToRefreshEnabled="true"
+                RefreshCommand="{Binding PullToRefreshCommand}">
                 <ListView.Header>
                     <Grid
                         Padding="20,20"
@@ -35,7 +39,7 @@
                             Grid.Row="0"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
-                            Text="{Binding FinalTotal}"/>
+                            BackgroundColor="Yellow"/>
                         <Label
                             Grid.Row="1"
                             Grid.Column="0"

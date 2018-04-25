@@ -16,9 +16,14 @@ namespace CS481Final.ViewModels
         IRepository _repository;
 
         public DelegateCommand SetDate { get; set; }
+        public DelegateCommand PullToRefreshCommand { get; set; }
 
-        //public DelegateCommand PullToRefreshCommand { get; set; }
-
+        private bool _showIsBusySpinner;
+        public bool ShowIsBusySpinner
+        {
+            get { return _showIsBusySpinner; }
+            set { SetProperty(ref _showIsBusySpinner, value); }
+        }
 
         private DateTime _dateSelected;
         public DateTime DateSelectedCommand
@@ -57,18 +62,26 @@ namespace CS481Final.ViewModels
             _repository = repository;
 
             SetDate = new DelegateCommand(OnSetDate);
-
-           // RefreshPeopleList();
+            PullToRefreshCommand = new DelegateCommand(OnPullToRefresh);
+            RefreshItemList();
         }
 
-        /*
-        private async Task RefreshPeopleList()
+        private async void OnPullToRefresh()
         {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RefreshPeopleList)}");
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnPullToRefresh)}");
 
+            await RefreshItemList();
+        }
+
+        private async Task RefreshItemList()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RefreshItemList)}");
+
+            ShowIsBusySpinner = true;
             var listOfItems = await _repository.GetItem();
             Item = new ObservableCollection<IndividualItem>(listOfItems);
-        }*/
+            ShowIsBusySpinner = false;
+        }
 
         private void OnSetDate()
         {
