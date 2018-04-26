@@ -79,8 +79,8 @@ namespace CS481Final.ViewModels
 
             ShowIsBusySpinner = true;
             var listOfItems = await _repository.GetItem();
-            Item = new ObservableCollection<IndividualItem>(listOfItems);
             ShowIsBusySpinner = false;
+            Item = new ObservableCollection<IndividualItem>(listOfItems);
         }
 
         private void OnSetDate()
@@ -106,9 +106,13 @@ namespace CS481Final.ViewModels
 
            if (parameters != null && parameters.ContainsKey("Charged"))
             {
+                if(Item == null)
+                {
+                    Item = new ObservableCollection<IndividualItem>();
+                }
                 var itemToAdd = (IndividualItem)parameters["Charged"];
                 Item.Add(itemToAdd);
-            }
+                }
         }
     }
 }

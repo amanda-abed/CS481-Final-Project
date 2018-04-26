@@ -8,8 +8,7 @@ using CS481Final.ViewModels;
 using Xamarin.Forms.Xaml;
 using CS481Final.Services;
 
-
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+//[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CS481Final
 {
     public partial class App : PrismApplication

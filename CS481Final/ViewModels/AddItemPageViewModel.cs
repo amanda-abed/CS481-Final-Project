@@ -109,11 +109,10 @@ namespace CS481Final.ViewModels
                 var navParams = new NavigationParameters();
                 navParams.Add("Charged", newItem);
 
-                await Task.Delay(2);
+                await Task.Delay(1);
            
-                await nav_service.NavigateAsync("/LogPage", navParams);
+                await nav_service.NavigateAsync("LogPage", navParams);
             }
-            await nav_service.NavigateAsync("CS481FinalPage");
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)

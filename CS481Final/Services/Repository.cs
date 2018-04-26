@@ -29,14 +29,15 @@ namespace CS481Final.Services
 
             for (int i = 0; i < numberOfItems; i++)
             {
-                var newItem = new IndividualItem()
+                IndividualItem newItem = new IndividualItem()
                 {
                     Total = $"{i}"
                 };
+
                 itemFromSomeDataSource.Add(newItem);
             }
 
-            await Task.Delay(2000);
+           await Task.Delay(2000);
 
             return itemFromSomeDataSource;
         }
