@@ -7,6 +7,7 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     ios:Page.UseSafeArea="true"
 	x:Class="CS481Final.Views.LogPage"
+    x:Name="Logs"
     Title = "{Binding Title}"
     IsBusy="{Binding ShowIsBusySpinner}">
         <StackLayout
@@ -64,6 +65,22 @@
                         <TextCell
                             Text="{Binding Total}"
                             TextColor="Black">  
+                        <TextCell.ContextActions>
+                            <MenuItem
+                                Text="Share"
+                                CommandParameter="{Binding .}"
+                                Command="{Binding Path=BindingContext.ShareCommand, Source={x:Reference Name=Logs}}"
+                                
+                                
+                            />
+                            <MenuItem 
+                                Text="Delete"
+                                CommandParameter="{Binding .}"
+                                Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference Name=Logs}}"
+                                IsDestructive="true"
+                            />
+                            
+                        </TextCell.ContextActions>
                         </TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

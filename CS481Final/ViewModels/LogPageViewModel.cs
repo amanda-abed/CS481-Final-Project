@@ -17,6 +17,8 @@ namespace CS481Final.ViewModels
 
         public DelegateCommand SetDate { get; set; }
         public DelegateCommand PullToRefreshCommand { get; set; }
+        public DelegateCommand<IndividualItem> DeleteCommand { get; set; }
+        public DelegateCommand<IndividualItem> ShareCommand { get; set; }
     
         private bool _showIsBusySpinner;
         public bool ShowIsBusySpinner
@@ -63,6 +65,8 @@ namespace CS481Final.ViewModels
 
             SetDate = new DelegateCommand(OnSetDate);
             PullToRefreshCommand = new DelegateCommand(OnPullToRefresh);
+            DeleteCommand = new DelegateCommand<IndividualItem>(OnDeleteTapped);
+            ShareCommand = new DelegateCommand<IndividualItem>(OnShareTapped);
             RefreshItemList();
         }
 
@@ -94,6 +98,16 @@ namespace CS481Final.ViewModels
                 }
                 ShowIsBusySpinner = false;
             }
+        }
+
+        private void OnDeleteTapped(IndividualItem itemToDelete)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnDeleteTapped)}:  {itemToDelete}");
+        }
+
+        private void OnShareTapped(IndividualItem itemToShare)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnShareTapped)}:  {itemToShare}");
         }
 
         private void OnSetDate()
