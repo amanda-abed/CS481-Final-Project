@@ -16,7 +16,9 @@
                 ItemsSource="{Binding Item}"
                 IsRefreshing="{Binding ShowIsBusySpinner}"
                 IsPullToRefreshEnabled="true"
-                RefreshCommand="{Binding PullToRefreshCommand}">
+                RefreshCommand="{Binding PullToRefreshCommand}"
+                SelectedItem="{Binding SelectedItem}"
+>
                 <ListView.Header>
                     <Grid
                         Padding="20,20"
@@ -61,7 +63,8 @@
                     <DataTemplate>
                         <TextCell
                             Text="{Binding Total}"
-                            TextColor="Black"/> 
+                            TextColor="Black">  
+                        </TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
                  <ListView.Footer>

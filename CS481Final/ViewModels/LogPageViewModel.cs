@@ -17,7 +17,7 @@ namespace CS481Final.ViewModels
 
         public DelegateCommand SetDate { get; set; }
         public DelegateCommand PullToRefreshCommand { get; set; }
-
+    
         private bool _showIsBusySpinner;
         public bool ShowIsBusySpinner
         {
@@ -77,10 +77,23 @@ namespace CS481Final.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RefreshItemList)}");
 
-            ShowIsBusySpinner = true;
-            var listOfItems = await _repository.GetItem();
-            ShowIsBusySpinner = false;
-            Item = new ObservableCollection<IndividualItem>(listOfItems);
+            if (Item == null)
+            {
+                ShowIsBusySpinner = true;
+                Item = new ObservableCollection<IndividualItem>();
+                ShowIsBusySpinner = false;
+            }
+            else
+            {
+                
+                ShowIsBusySpinner = true;
+                var listOfItems = await _repository.GetItem();
+                if(listOfItems != null)
+                {
+                    Item = new ObservableCollection<IndividualItem>(listOfItems);
+                }
+                ShowIsBusySpinner = false;
+            }
         }
 
         private void OnSetDate()

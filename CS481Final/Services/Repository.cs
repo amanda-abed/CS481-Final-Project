@@ -18,7 +18,7 @@ namespace CS481Final.Services
         // Method summary provided in interface.
         public async Task<IList<IndividualItem>> GetItem()
         {
-            await Task.Delay(2000);
+            await Task.Delay(500);
 
             return itemFromSomeDataSource;
         }
@@ -37,7 +37,7 @@ namespace CS481Final.Services
                 itemFromSomeDataSource.Add(newItem);
             }
 
-           await Task.Delay(2000);
+           await Task.Delay(500);
 
             return itemFromSomeDataSource;
         }
