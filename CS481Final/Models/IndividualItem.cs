@@ -16,5 +16,8 @@ namespace CS481Final.Models
         {
             return $"{Total}";
         }
+        public string Value() {
+            return Total;
+        }
 	}
 }

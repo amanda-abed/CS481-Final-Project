@@ -127,7 +127,7 @@ namespace CS481Final.ViewModels
                 var SmsTask = CrossMessaging.Current.SmsMessenger;
 
                 if (SmsTask.CanSendSms)
-                    SmsTask.SendSms(null, $"Reminder: Please send me ${itemToShare}");
+                    SmsTask.SendSms(null, $"Reminder: Please send me ${itemToShare.Value()}");
                 else {
                     Debug.WriteLine($"{this.GetType().Name}.{nameof(SmsTask)}.{nameof(SmsTask.CanSendSms)} = {SmsTask.CanSendSms}");
                 }
@@ -139,7 +139,7 @@ namespace CS481Final.ViewModels
                 if (emailMessenger.CanSendEmail)
                 {
                     // Send simple e-mail to single receiver without attachments, bcc, cc etc.
-                    emailMessenger.SendEmail(null, "Reminder from SplitWithFriends!", $"Hello! This is a message is a reminder for you to send me ${itemToShare}");
+                    emailMessenger.SendEmail(null, "Reminder from SplitWithFriends!", $"Hello! This is a message is a reminder for you to send me ${itemToShare.Value()}");
                 }
                 else
                 {
