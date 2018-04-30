@@ -112,8 +112,21 @@ namespace CS481Final.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnShareTapped)}:  {itemToShare}");
 
-            string response = await _pageDialogService.DisplayActionSheetAsync(null, "Text", "Email", "Call");
+            string response = await _pageDialogService.DisplayActionSheetAsync(null, "Cancel", null, "Text", "Email", "Call");
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnShareTapped)}:  {itemToShare}, {response}");
+
+            if (response.Equals("Text")) {
+                Debug.WriteLine("ActionMenu: Text");
+            }
+            else if (response.Equals("Email")){
+                Debug.WriteLine("ActionMenu: Email");
+            }
+            else if (response.Equals("Call")) {
+                Debug.WriteLine("ActionMenu: Call");
+            }
+            else {
+                Debug.WriteLine("ActionMenu: Cancel");
+            }
         }
 
         private void OnSetDate()
