@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using CS481Final.Services;
 using CS481Final.Models;
 using Prism.Services;
+using Plugin.Messaging;
 
 namespace CS481Final.ViewModels
 {
@@ -123,12 +124,27 @@ namespace CS481Final.ViewModels
 
             if (response.Equals("Text")) {
                 Debug.WriteLine("ActionMenu: Text");
+                var SmsTask = CrossMessaging.Current.SmsMessenger;
+
+                if (SmsTask.CanSendSms)
+                    SmsTask.SendSms(null, $"Reminder: Please send me ${itemToShare}");
+                else {
+                    Debug.WriteLine($"{this.GetType().Name}.{nameof(SmsTask)}.{nameof(SmsTask.CanSendSms)} = {SmsTask.CanSendSms}");
+                }
             }
             else if (response.Equals("Email")){
                 Debug.WriteLine("ActionMenu: Email");
-            }
-            else if (response.Equals("Call")) {
-                Debug.WriteLine("ActionMenu: Call");
+
+                var emailMessenger = CrossMessaging.Current.EmailMessenger;
+                if (emailMessenger.CanSendEmail)
+                {
+                    // Send simple e-mail to single receiver without attachments, bcc, cc etc.
+                    emailMessenger.SendEmail(null, "Reminder from SplitWithFriends!", $"Hello! This is a message is a reminder for you to send me ${itemToShare}");
+                }
+                else
+                {
+                    Debug.WriteLine($"{this.GetType().Name}.{nameof(emailMessenger)}.{nameof(emailMessenger.CanSendEmail)} = {emailMessenger.CanSendEmail}");
+                }
             }
             else {
                 Debug.WriteLine("ActionMenu: Cancel");
