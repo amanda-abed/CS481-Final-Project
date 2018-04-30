@@ -8,11 +8,13 @@ using Plugin.LocalNotifications;
 using System.Threading.Tasks;
 using CS481Final.Services;
 using CS481Final.Models;
+using Prism.Services;
 
 namespace CS481Final.ViewModels
 {
     public class LogPageViewModel : BindableBase, INavigationAware
     {
+        IPageDialogService _pageDialogService;
         IRepository _repository;
 
         public DelegateCommand SetDate { get; set; }
@@ -55,13 +57,14 @@ namespace CS481Final.ViewModels
             set { SetProperty(ref _item, value); }
         }
 
-        public LogPageViewModel(IRepository repository)
+        public LogPageViewModel(IRepository repository, IPageDialogService pageDialogService)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(LogPageViewModel)}:  ctor");
 
             Title = "Logs";
 
             _repository = repository;
+            _pageDialogService = pageDialogService;
 
             SetDate = new DelegateCommand(OnSetDate);
             PullToRefreshCommand = new DelegateCommand(OnPullToRefresh);
@@ -105,9 +108,12 @@ namespace CS481Final.ViewModels
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnDeleteTapped)}:  {itemToDelete}");
         }
 
-        private void OnShareTapped(IndividualItem itemToShare)
+        private async void OnShareTapped(IndividualItem itemToShare)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnShareTapped)}:  {itemToShare}");
+
+            string response = await _pageDialogService.DisplayActionSheetAsync(null, "Text", "Email", "Call");
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnShareTapped)}:  {itemToShare}, {response}");
         }
 
         private void OnSetDate()
