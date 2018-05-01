@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{BD3C4CCB-3CE2-47BA-B064-F4D2700AC735}|Default" GitUserInfo="UsingMD">
+  <MonoDevelop.Ide.ItemProperties.CS481Final.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.E56D1DC0-131A-4F2F-A545-633153381B62" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="cs481-final-project Status">
+    <Files>
+      <File FileName="CS481Final/Views/AddItemPage.xaml" Line="119" Column="1" />
+      <File FileName="CS481Final/Models/IndividualItem.cs" Line="20" Column="2" />
+      <File FileName="CS481Final/ViewModels/AddItemPageViewModel.cs" Line="82" Column="10" />
+      <File FileName="CS481Final/ViewModels/LogPageViewModel.cs" Line="150" Column="19" />
+      <File FileName="CS481Final/Views/LogPage.xaml" Line="99" Column="1" />
+      <File FileName="CS481Final/Views/CS481FinalPage.xaml" Line="70" Column="1" />
+      <File FileName="CS481Final/ViewModels/CS481FinalPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="cs481-final-project Status" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.CS481Final.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
