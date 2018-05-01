@@ -38,11 +38,12 @@
                             Grid.Row="0"
                             Grid.Column="0"
                             Text="Total Amount Due:"/>
-                        <Label
+                        <Label 
                             Grid.Row="0"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
-                            BackgroundColor="Yellow"/>
+                            BackgroundColor="Yellow"
+                            Text="{Binding TotalADue}"/>
                         <Label
                             Grid.Row="1"
                             Grid.Column="0"

@@ -26,7 +26,12 @@ namespace CS481Final.ViewModels
             get { return _showIsBusySpinner; }
             set { SetProperty(ref _showIsBusySpinner, value); }
         }
-
+        private string total_due;
+        public string TotalADue
+        {
+            get { return total_due; }
+            set { SetProperty(ref total_due, value); }
+        }
         private DateTime _dateSelected;
         public DateTime DateSelectedCommand
         {
@@ -125,9 +130,10 @@ namespace CS481Final.ViewModels
         public void OnNavigatedTo(NavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedTo)}");
+
         }
 
-        public void OnNavigatingTo(NavigationParameters parameters)
+        public async void OnNavigatingTo(NavigationParameters parameters)
         {
            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
 
@@ -136,10 +142,14 @@ namespace CS481Final.ViewModels
                 if(Item == null)
                 {
                     Item = new ObservableCollection<IndividualItem>();
+                   
                 }
                 var itemToAdd = (IndividualItem)parameters["Charged"];
                 Item.Add(itemToAdd);
+
+                 TotalADue = itemToAdd.ToString();
                 }
         }
+       
     }
 }

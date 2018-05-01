@@ -14,7 +14,7 @@ namespace CS481Final.Models
 
         public override string ToString()
         {
-            return $"Total={Total}";
+            return $"{Total}";
         }
 	}
 }
