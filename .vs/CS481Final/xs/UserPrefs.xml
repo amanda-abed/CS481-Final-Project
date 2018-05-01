@@ -1,8 +1,8 @@
-﻿<Properties StartupConfiguration="{BD3C4CCB-3CE2-47BA-B064-F4D2700AC735}|Default">
+﻿<Properties StartupConfiguration="{C00EDCF5-2082-483D-A756-9C3BABD11C43}|Default">
   <MonoDevelop.Ide.ItemProperties.CS481Final.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.38702072-F7EB-48C5-9B96-DC12A34D9C57" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CS481Final/Models/IndividualItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CS481Final/ViewModels/LogPageViewModel.cs">
     <Files>
-      <File FileName="CS481Final/ViewModels/LogPageViewModel.cs" Line="140" Column="154" />
+      <File FileName="CS481Final/ViewModels/LogPageViewModel.cs" Line="125" Column="23" />
       <File FileName="../../../Downloads/jbachelorcsusm-libertylistview-284dea6f19d5/LibertyListViews/LibertyListViews/ViewModels/MainPageViewModel.cs" Line="84" Column="10" />
       <File FileName="CS481Final/Views/LogPage.xaml" Line="98" Column="1" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
@@ -15,8 +15,7 @@
       <File FileName="CS481Final/App.xaml.cs" Line="8" Column="26" />
       <File FileName="CS481Final/Views/AddItemPage.xaml" Line="119" Column="1" />
       <File FileName="../../../../../Library/Frameworks/Xamarin.Android.framework/Versions/8.2.0-16/lib/xamarin.android/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1528" Column="2" />
-      <File FileName="cs481-final-project Status" />
-      <File FileName="CS481Final/Models/IndividualItem.cs" Line="17" Column="22" />
+      <File FileName="CS481Final/Models/IndividualItem.cs" Line="18" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
