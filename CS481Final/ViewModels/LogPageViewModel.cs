@@ -11,6 +11,7 @@ using CS481Final.Models;
 
 namespace CS481Final.ViewModels
 {
+   
     public class LogPageViewModel : BindableBase, INavigationAware
     {
         IRepository _repository;
@@ -148,7 +149,8 @@ namespace CS481Final.ViewModels
                 Item.Add(itemToAdd);
 
                  TotalADue = itemToAdd.ToString();
-                }
+
+            }
         }
        
     }

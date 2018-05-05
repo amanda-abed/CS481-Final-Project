@@ -5,10 +5,11 @@
       <File FileName="CS481Final/Views/AddItemPage.xaml" Line="119" Column="1" />
       <File FileName="CS481Final/Models/IndividualItem.cs" Line="20" Column="2" />
       <File FileName="CS481Final/ViewModels/AddItemPageViewModel.cs" Line="82" Column="10" />
-      <File FileName="CS481Final/ViewModels/LogPageViewModel.cs" Line="150" Column="19" />
-      <File FileName="CS481Final/Views/LogPage.xaml" Line="99" Column="1" />
+      <File FileName="CS481Final/ViewModels/LogPageViewModel.cs" Line="14" Column="4" />
+      <File FileName="CS481Final/Views/LogPage.xaml" Line="64" Column="21" />
       <File FileName="CS481Final/Views/CS481FinalPage.xaml" Line="70" Column="1" />
-      <File FileName="CS481Final/ViewModels/CS481FinalPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="CS481Final/ViewModels/CS481FinalPageViewModel.cs" Line="13" Column="65" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
       <File FileName="cs481-final-project Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>

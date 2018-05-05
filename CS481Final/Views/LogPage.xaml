@@ -42,7 +42,7 @@
                             Grid.Row="0"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
-                            BackgroundColor="Yellow"
+                            BackgroundColor="Aqua"
                             Text="{Binding TotalADue}"/>
                         <Label
                             Grid.Row="1"
@@ -59,6 +59,14 @@
                             Grid.Column="2"
                             Text="Set"
                             Command="{Binding SetDate}"/>
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            BackgroundColor="Aqua"
+                            Text ="List of all charges added:" 
+                    />
                     </Grid>
                 </ListView.Header>
                 <ListView.ItemTemplate>
