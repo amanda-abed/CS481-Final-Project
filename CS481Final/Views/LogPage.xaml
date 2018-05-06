@@ -8,9 +8,11 @@
     ios:Page.UseSafeArea="true"
 	x:Class="CS481Final.Views.LogPage"
     x:Name="Logs"
+    BackgroundColor="#cdd6d8"
     Title = "{Binding Title}"
     IsBusy="{Binding ShowIsBusySpinner}">
         <StackLayout
+        BackgroundColor="##cdd6d8"
             HorizontalOptions="Fill"
             VerticalOptions="Fill">
             <ListView
@@ -22,6 +24,7 @@
 >
                 <ListView.Header>
                     <Grid
+                    BackgroundColor="#cdd6d8"
                         Padding="20,20"
                         RowSpacing="10">
                     <Grid.RowDefinitions>
@@ -42,7 +45,7 @@
                             Grid.Row="0"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
-                            BackgroundColor="#d8d7c9"
+                            BackgroundColor="#e3edef"
                             Text="{Binding TotalADue}"/>
                         <Label
                             Grid.Row="1"
@@ -64,7 +67,7 @@
                             Grid.Column="0"
                             FontSize="14"
                             FontAttributes="Bold"
-                            BackgroundColor="#d8d7c9"
+                            BackgroundColor="#e3edef"
                             Text ="List of all charges added:" 
                     />
                     </Grid>
