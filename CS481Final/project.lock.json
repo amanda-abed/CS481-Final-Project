@@ -2947,18 +2947,18 @@
     ".NETPortable,Version=v4.5,Profile=Profile111": []
   },
   "packageFolders": {
-    "/Users/stefanretief/.nuget/packages/": {}
+    "/Users/alejandromonje/.nuget/packages/": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "/Users/stefanretief/Projects/cs481Final/cs481-final-project/CS481Final/CS481Final.csproj",
+      "projectUniqueName": "/Users/alejandromonje/Desktop/cs481-final-project/CS481Final/CS481Final.csproj",
       "projectName": "CS481Final",
-      "projectPath": "/Users/stefanretief/Projects/cs481Final/cs481-final-project/CS481Final/CS481Final.csproj",
-      "projectJsonPath": "/Users/stefanretief/Projects/cs481Final/cs481-final-project/CS481Final/project.json",
-      "packagesPath": "/Users/stefanretief/.nuget/packages/",
+      "projectPath": "/Users/alejandromonje/Desktop/cs481-final-project/CS481Final/CS481Final.csproj",
+      "projectJsonPath": "/Users/alejandromonje/Desktop/cs481-final-project/CS481Final/project.json",
+      "packagesPath": "/Users/alejandromonje/.nuget/packages/",
       "projectStyle": "ProjectJson",
       "configFilePaths": [
-        "/Users/stefanretief/.config/NuGet/NuGet.Config"
+        "/Users/alejandromonje/.config/NuGet/NuGet.Config"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}

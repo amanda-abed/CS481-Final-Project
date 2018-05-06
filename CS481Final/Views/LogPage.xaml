@@ -37,7 +37,7 @@
                         <Label
                             Grid.Row="0"
                             Grid.Column="0"
-                            Text="Total Amount Due:"/>
+                            Text="Last Item added:"/>
                         <Label 
                             Grid.Row="0"
                             Grid.Column="1"

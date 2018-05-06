@@ -5,12 +5,11 @@ using Xamarin.Forms;
 
 namespace CS481Final.Views
 {
-    public partial class AddItemPage : ContentPage
+    public partial class AboutPage : ContentPage
     {
-        public AddItemPage()
+        public AboutPage()
         {
             InitializeComponent();
         }
-
     }
 }

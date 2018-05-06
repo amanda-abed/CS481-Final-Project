@@ -65,5 +65,39 @@
             HorizontalOptions="Center"
             VerticalOptions="EndAndExpand"
             Color="Black"/>
+         <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="About"
+            Command="{Binding NavToAboutPageCommand}"
+            TextColor="White"
+            FontAttributes="Bold"
+            BorderColor="Transparent"
+            HeightRequest="20"/> 
+        <BoxView 
+            Grid.Row="3"
+            Grid.Column="0"
+            HeightRequest="1"
+            WidthRequest="100"
+            HorizontalOptions="Center"
+            VerticalOptions="EndAndExpand"
+            Color="Black"/>
+         <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="Creators"
+            Command="{Binding NavToCreatorsPageCommand}"
+            TextColor="White"
+            FontAttributes="Bold"
+            BorderColor="Transparent"
+            HeightRequest="20"/> 
+        <BoxView 
+            Grid.Row="4"
+            Grid.Column="0"
+            HeightRequest="1"
+            WidthRequest="100"
+            HorizontalOptions="Center"
+            VerticalOptions="EndAndExpand"
+            Color="Black"/>
         </Grid>
 </ContentPage>

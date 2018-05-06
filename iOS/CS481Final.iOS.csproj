@@ -83,9 +83,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Prism">
-      <HintPath>..\packages\Prism.Core.7.0.0.396\lib\netstandard2.0\Prism.dll</HintPath>
-    </Reference>
     <Reference Include="CommonServiceLocator">
       <HintPath>..\packages\Unity.5.5.5\lib\netstandard2.0\CommonServiceLocator.dll</HintPath>
     </Reference>
@@ -130,6 +127,9 @@
     <Reference Include="Plugin.Messaging">
       <HintPath>..\packages\Xam.Plugins.Messaging.5.2.0\lib\Xamarin.iOS10\Plugin.Messaging.dll</HintPath>
     </Reference>
+    <Reference Include="Prism">
+      <HintPath>..\packages\Prism.Core.7.0.0.396\lib\netstandard2.0\Prism.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CS481Final\CS481Final.csproj">
@@ -161,6 +161,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\splitWithFriendsAppIcon.png" />
     <BundleResource Include="Resources\homebackground.png" />
+    <BundleResource Include="Resources\piggy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets')" />

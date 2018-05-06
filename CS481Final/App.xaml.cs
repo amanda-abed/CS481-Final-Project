@@ -34,7 +34,8 @@ namespace CS481Final
             containerRegistry.RegisterForNavigation<CS481FinalPage, CS481FinalPageViewModel>();
             containerRegistry.RegisterForNavigation<LogPage, LogPageViewModel>();
             containerRegistry.RegisterForNavigation<AddItemPage, AddItemPageViewModel>();
-
+            containerRegistry.RegisterForNavigation<AboutPage, AboutPageViewModel>();
+           
             containerRegistry.RegisterSingleton<IRepository, Repository>();
         }
 
