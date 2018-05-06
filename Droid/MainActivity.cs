@@ -12,7 +12,7 @@ using Prism.Ioc;
 
 namespace CS481Final.Droid
 {
-    [Activity(Label = "CS481Final.Droid", Icon = "@drawable/splitwithfriendsappicon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "SplitWithFriends!", Icon = "@drawable/splitwithfriendsappicon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)

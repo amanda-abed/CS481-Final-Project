@@ -77,8 +77,13 @@ namespace CS481Final.ViewModels
 
             double totalNum = Convert.ToDouble(total_amount);
             double totalPeople = Convert.ToDouble(num_people);
-            double CalcTotal = totalNum/totalPeople;
-            AmountCharged = CalcTotal.ToString();
+            if (totalPeople != 0 || totalPeople == ' ')
+            {
+                double CalcTotal = totalNum / totalPeople;
+                AmountCharged = CalcTotal.ToString("F");
+            }
+            else
+                AmountCharged = "Error";
         }
 
         private async void OnCancel()
