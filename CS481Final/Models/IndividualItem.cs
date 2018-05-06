@@ -19,6 +19,6 @@ namespace CS481Final.Models
         public string Value() {
             return Total;
         }
-       
+
 	}
 }

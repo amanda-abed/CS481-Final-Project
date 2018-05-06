@@ -41,6 +41,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CreatorsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -66,6 +70,10 @@
     <Compile Include="Views\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CreatorsPage.xaml.cs">
+      <DependentUpon>CreatorsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\CreatorsPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

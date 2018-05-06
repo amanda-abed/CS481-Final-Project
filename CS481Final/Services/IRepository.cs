@@ -11,5 +11,7 @@ namespace CS481Final.Services
         Task<IList<IndividualItem>> GetItem(int numberOfItems);
 
         Task AddItem(IndividualItem newItem);
+
+        Task RemoveItem(IndividualItem removeItem);
     }
 }
