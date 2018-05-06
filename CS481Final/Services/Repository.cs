@@ -52,5 +52,14 @@ namespace CS481Final.Services
             itemFromSomeDataSource.Add(newItem);
             await Task.Delay(500);
         }
+
+        public async Task RemoveItem(IndividualItem removeItem)
+        {
+            if (itemFromSomeDataSource == null)
+            {
+            }
+            itemFromSomeDataSource.Remove(removeItem);
+            await Task.Delay(500);
+        }
     }
 }

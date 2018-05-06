@@ -99,7 +99,6 @@ namespace CS481Final.ViewModels
             }
             else
             {
-                
                 ShowIsBusySpinner = true;
                 var listOfItems = await _repository.GetItem();
                 if(listOfItems != null)
@@ -113,6 +112,8 @@ namespace CS481Final.ViewModels
         private void OnDeleteTapped(IndividualItem itemToDelete)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnDeleteTapped)}:  {itemToDelete}");
+            _repository.RemoveItem(itemToDelete);
+            Item.Remove(itemToDelete);
         }
 
         private async void OnShareTapped(IndividualItem itemToShare)
