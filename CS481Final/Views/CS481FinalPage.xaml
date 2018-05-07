@@ -11,9 +11,11 @@
         <Grid
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Padding="0,40,0,100">
+            Padding="0,20,0,50">
         <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
