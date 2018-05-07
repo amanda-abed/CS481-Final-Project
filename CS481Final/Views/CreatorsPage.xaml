@@ -58,8 +58,5 @@
             FontSize="20"
             HorizontalTextAlignment="Center"
             TextColor="#f2f0c4"/>
-       
-      
-      
         </Grid>
 </ContentPage>

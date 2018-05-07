@@ -179,14 +179,13 @@ namespace CS481Final.ViewModels
                 if(Item == null)
                 {
                     Item = new ObservableCollection<IndividualItem>();
-                   
                 }
                 var itemToAdd = (IndividualItem)parameters["Charged"];
                 Item.Add(itemToAdd);
 
-                 TotalADue = itemToAdd.ToString();
-
+                TotalADue = itemToAdd.ToString();
             }
+            await RefreshItemList();
         }
        
     }

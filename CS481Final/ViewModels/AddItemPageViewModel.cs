@@ -75,15 +75,21 @@ namespace CS481Final.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnCalculateTotal)}");
 
-            double totalNum = Convert.ToDouble(total_amount);
-            double totalPeople = Convert.ToDouble(num_people);
-            if (totalPeople != 0 || totalPeople == ' ')
-            {
-                double CalcTotal = totalNum / totalPeople;
-                AmountCharged = CalcTotal.ToString("F");
-            }
-            else
+            double test;
+            if (!double.TryParse(total_amount, out test) || !double.TryParse(num_people, out test))
                 AmountCharged = "Error";
+            else
+            {
+                double totalNum = Convert.ToDouble(total_amount);
+                double totalPeople = Convert.ToDouble(num_people);
+                if (totalPeople <= 0)
+                    AmountCharged = "Error";
+                else
+                {
+                    double CalcTotal = totalNum / totalPeople;
+                    AmountCharged = CalcTotal.ToString("F");
+                }
+            }
         }
 
         private async void OnCancel()
