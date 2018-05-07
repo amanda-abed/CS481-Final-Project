@@ -7,17 +7,22 @@
     xmlns:local="clr-namespace:CS481Final"
     x:Class="CS481Final.Views.CreatorsPage"
     BackgroundImage="homebackground.png">
+    <ScrollView
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Padding="20,20,20,20">
         <Grid
-            VerticalOptions="Start"
-            HorizontalOptions="Center"
-            Padding="15,10,10,10">
+           RowSpacing="30"
+           >
+            <!--Padding="15,10,10,10"-->
+             
         <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
         <Label
               Grid.Row="1"
@@ -27,13 +32,13 @@
             FontSize="20"
             HorizontalTextAlignment="Center"
             TextColor="#f2f0c4"/>
-
         <Image
               Grid.Row="0"
             Grid.Column="0"
-             HorizontalOptions="FillAndExpand"
-            VerticalOptions="CenterAndExpand"
-                Source="create.png"  />
+             HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Source="create.png"
+            />
         <Label
               Grid.Row="2"
             Grid.Column="0"
@@ -59,4 +64,5 @@
             HorizontalTextAlignment="Center"
             TextColor="#f2f0c4"/>
         </Grid>
+        </ScrollView>
 </ContentPage>
